@@ -194,7 +194,7 @@ class GymTrainingInterface(GymTrainedInterface):
     """
 
     def step(
-        self, new_schedule: Dict[str, List[float]], force_feasibility: bool = True
+        self, new_schedule: Dict[str, List[float]], force_feasibility: bool = False
     ) -> Tuple[bool, bool]:
         """ Step the simulation using the input new_schedule until the
         simulator requires a new charging schedule. If the provided

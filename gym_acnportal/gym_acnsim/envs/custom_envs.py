@@ -11,7 +11,7 @@ from gym import spaces
 
 from .base_env import BaseSimEnv
 from . import observation as obs, reward_functions as rf
-from .action_spaces import SimAction, zero_centered_single_charging_schedule
+from .action_spaces import SimAction, zero_centered_single_charging_schedule, single_charging_schedule
 from .observation import SimObservation
 from ..interfaces import GymTrainedInterface
 
@@ -178,7 +178,7 @@ default_observation_objects: List[SimObservation] = [
     obs.phases_observation(),
     obs.timestep_observation(),
 ]
-default_action_object: SimAction = zero_centered_single_charging_schedule()
+default_action_object: SimAction = single_charging_schedule()
 default_reward_functions: List[Callable[[BaseSimEnv], float]] = [
     rf.evse_violation,
     rf.current_constraint_violation,
